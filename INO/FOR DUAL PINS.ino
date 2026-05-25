@@ -111,7 +111,7 @@ void initSP() {
 }
 void initHP() {
   hp = new SPIClass(HSPI);
-  hp->begin();
+  hp->begin(14, 25, 13, 15);  // SCK=14, MISO=25, MOSI=13, SS=15
   if (radio.begin(hp)) {
     Serial.println("HP Started !!!");
     radio.setAutoAck(false);
